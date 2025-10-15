@@ -1,11 +1,11 @@
 |-include-|-delay-|-delay.c
-|	  |	  |-delay.h
+|	  |	            |-delay.h
 |	  |
 |	  |-play_mode-|-play_mode.c
-|	  |	      |-play_mode.h
+|	  |	          |-play_mode.h
 |	  |
 |	  |-uart_init-|-uart_init.c
-|	  |	      |-uart_init.h
+|	  |	          |-uart_init.h
 |	  |
 |
 |-src-|-main.c
