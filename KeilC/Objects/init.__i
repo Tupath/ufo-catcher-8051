@@ -1,0 +1,1 @@
+"include\init\init.c" OPTIMIZE (8,SPEED) BROWSE INCDIR(.\include;.\include\delay;.\include\init;.\include\play_mode;.\include\uart_init) DEBUG OBJECTEXTEND PRINT(.\Listings\init.lst) TABS (2) OBJECT(.\Objects\init.obj)

@@ -1,0 +1,7 @@
+".\Objects\STARTUP.obj",
+".\Objects\main.obj",
+".\Objects\uart_init.obj",
+".\Objects\play_mode.obj",
+".\Objects\delay.obj" 
+TO ".\Objects\UFO_Catcher" 
+PRINT(".\Listings\UFO_Catcher.m51")

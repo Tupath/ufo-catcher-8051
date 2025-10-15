@@ -1,0 +1,63 @@
+C51 COMPILER V9.60.7.0   UART_INIT                                                         10/15/2025 00:30:33 PAGE 1   
+
+
+C51 COMPILER V9.60.7.0, COMPILATION OF MODULE UART_INIT
+OBJECT MODULE PLACED IN .\Objects\uart_init.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE include\uart_init\uart_init.c OPTIMIZE(8,SPEED) BROWSE INCDIR(.\include;
+                    -.\include\delay;.\include\play_mode;.\include\uart_init) DEBUG OBJECTEXTEND PRINT(.\Listings\uart_init.lst) TABS(2) OBJE
+                    -CT(.\Objects\uart_init.obj)
+
+line level    source
+
+   1          #include <REGX51.H>
+   2          #include "uart_init.h"
+   3          
+   4          
+   5          void uart_init(void) {
+   6   1        TMOD = 0x20;       //timer1 che do 8bit tu dong nap lai
+   7   1        TH1 = 0xFD;        //toc do baud 9600
+   8   1        SCON = 0x50;       //8bit UART, 1 stopbit , cho phep nhan
+   9   1        TR1 = 1;           //bat dau Timer1
+  10   1      }
+  11          
+  12          void uart_sendchar(unsigned char c) {
+  13   1        SBUF = c;          //gui ky tu
+  14   1        while (!TI);       //doi gui xong
+  15   1        TI = 0;            //xoa co truyen
+  16   1      }
+  17          
+  18          //gui chuoi
+  19          void uart_sendstring(char *s) {
+  20   1        while(*s) {
+  21   2          uart_sendchar(*s++);
+  22   2        }
+  23   1      }
+  24          
+  25          //gui so dang thap phan (unsigned char)
+  26          void uart_sendnum(unsigned char num) {
+  27   1        unsigned char hundreds, tens, ones;
+  28   1      
+  29   1        hundreds = num / 100;
+  30   1        tens = (num / 10) % 10;
+  31   1        ones = num % 10;
+  32   1      
+  33   1        if (hundreds > 0)
+  34   1          uart_sendchar(hundreds + '0');
+  35   1        if (hundreds > 0 || tens > 0)
+  36   1          uart_sendchar(tens + '0');
+  37   1        uart_sendchar(ones + '0');
+  38   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    119    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       3
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
