@@ -12,7 +12,8 @@
 |
 |-Objects-|-UFO_Catcher.h
 |
-|UFO_Catcher.uvproj
+|-UFO_Catcher.uvproj
+
 
 
 
