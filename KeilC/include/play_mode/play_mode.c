@@ -10,8 +10,8 @@ void play_mode(unsigned char *x, unsigned char *y, unsigned char *z) {
     while (coinEnable) {
         buttonState = P2 | 0xE0; 
         /*0xE0 = 1110 0000
-          khi OR voi 0xE0 thì P2.5–P2.7 luôn = 1
-          chi doc cac bit thap P2.0–P2.4 de kiem tra nut nhan
+          khi OR voi 0xE0 thi P2.5â€“P2.7 luon = 1
+          chi doc cac bit thap P2.0â€“P2.4 de kiem tra nut nhan
         */
 
         switch (buttonState) {
@@ -55,3 +55,4 @@ void play_mode(unsigned char *x, unsigned char *y, unsigned char *z) {
         }
     }
 }
+
