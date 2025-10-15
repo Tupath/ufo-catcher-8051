@@ -1,6 +1,6 @@
 # ufo-catcher-8051
 |-include-|-delay-|-delay.c
-|	        |	  |-delay.h
+|	        |	      |-delay.h
 |	  |
 |	  |-play_mode-|-play_mode.c
 |	  |	      |-play_mode.h
